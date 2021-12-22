@@ -4,12 +4,11 @@ import Suppliers from "./serverApis/Suppliers";
 import Transactions from "./serverApis/Transactions";
 import Authentication from "./serverApis/Authentication";
 
-const ApiService = {
+export const ApiService = {
   items: Items,
   customers: Customers,
   suppliers: Suppliers,
   auth: Authentication,
   transactions: Transactions,
-}();
+};
 
-export default ApiService;

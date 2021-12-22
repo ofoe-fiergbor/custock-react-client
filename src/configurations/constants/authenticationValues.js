@@ -7,6 +7,6 @@ export const signup = {
 };
 
 export const login = {
-    email: "",
-    password: "",
-  };
+  usernameOrEmail: "",
+  password: "",
+};

@@ -9,9 +9,15 @@ const Authentication = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setUser: (state, action) => (state.user = action.payload),
-    setUserType: (state, action) => (state.userType = action.payload),
-    logout: () => initialState,
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    setUserType: (state, action) => {
+      state.userType = action.payload;
+    },
+    logout: () => {
+      return initialState;
+    },
   },
 });
 

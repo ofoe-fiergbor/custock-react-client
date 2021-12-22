@@ -1,8 +1,10 @@
-import { Formik } from "formik";
 import React from "react";
+import { Formik } from "formik";
 import { signup } from "../../../configurations/constants/authenticationValues";
 import Input from "../input/Input";
 import "./signup.css";
+
+import { ApiService } from "../../../configurations/services/api/ApiService";
 
 /**
  *
@@ -14,10 +16,10 @@ import "./signup.css";
  */
 
 const Signup = () => {
-  const handleFormSubmit = (values) => {
-    console.log(values)
 
-    
+  const handleFormSubmit = async (values) => {
+    const response = await ApiService.auth.register(values);
+    console.log(response);
   };
   return (
     <div className="container">
@@ -54,7 +56,6 @@ const Signup = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="btn auth-button"
-                
               >
                 {isSubmitting ? "Loading..." : "Submit"}
               </button>

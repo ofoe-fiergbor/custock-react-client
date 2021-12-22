@@ -1,5 +1,5 @@
 export const apiConstants = {
-  baseURL: `${process.env.REACT_APP_BASE_URL}/api/v1`,
+  baseURL: `http://localhost:8080/api/v1`,
   requestMethod: {
     DELETE: "DELETE",
     POST: "POST",

@@ -1,12 +1,8 @@
-import React from 'react';
+import React from "react";
+import Navigation from "./configurations/domain/navigation/Navigation";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello world</h1>
-      <h1>${process.env.REACT_APP_VARIABLE}</h1>
-    </div>
-  );
+  return <Navigation />;
 }
 
 export default App;

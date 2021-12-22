@@ -1,0 +1,30 @@
+@import url("../../../configurations/constants/themeColors.css");
+
+
+.auth-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-left{
+    background-color: var(--off-white);
+    width: 100%;
+    padding: 5% 10%;
+    
+}
+.auth-right{
+    background-color:var(--off-blue);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-toggle-form{
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 1em;
+}

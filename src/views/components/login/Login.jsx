@@ -2,7 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import Input from "../input/Input";
 import { login } from "../../../configurations/constants/authenticationValues";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setUser,
   setUserType,

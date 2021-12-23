@@ -1,0 +1,42 @@
+@import url("../../../configurations/constants/themeColors.css");
+
+.side-bar-container {
+  width: 12vw;
+  background-color: var(--off-white);
+  height: 100vh;
+  padding-top: 3%;
+}
+
+.side-bar-container > h2 {
+  margin-bottom: 30%;
+  padding-left: 10%;
+}
+
+.side-bar-btn {
+  padding-left: 10%;
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  height: 8%;
+  margin-bottom: 2%;
+}
+.side-bar-btn i {
+  margin-right: 10%;
+  font-size: 1.5rem;
+}
+.side-bar-btn-inner {
+  display: flex;
+  align-items: baseline;
+}
+.side-bar-btn:hover {
+  /* background-color: var(--light-grey); */
+  background-color: red;
+  color: var(--off-white);
+  cursor: pointer;
+  border-right: 0.3em solid var(--blue);
+}
+
+#remove-text-decoration {
+  text-decoration: none;
+  color: black;
+}

@@ -17,28 +17,3 @@
   color: var(--deep-grey);
 }
 
-.create-btn {
-  display: flex;
-  margin-right: 2em;
-  font-size: larger;
-  font-weight: 600;
-  background-color: var(--off-blue);
-  width: 8em;
-  color: var(--off-white);
-  height: 2.5em;
-  border-radius: 1.5em;
-  justify-content: center;
-  align-items: center;
-  -webkit-box-shadow: 5px 4px 16px -4px rgba(0, 0, 0, 0.97);
-  box-shadow: 5px 4px 16px -4px rgba(0, 0, 0, 0.97);
-  cursor: pointer;
-}
-.create-btn:hover {
-    background-color: var(--off-blue);
-    opacity: 0.8;
-    /* color: var(--off-white); */
-}
-.create-btn > p {
-  margin-bottom: 0;
-  margin-right: 0.2em;
-}

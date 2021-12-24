@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.css";
 import { useSelector } from "react-redux";
 import DashboardHeader from "../../components/dashboardHeader/DashboardHeader";
 
-// username
+
 const Home = () => {
   const {
     user: { username },
   } = useSelector((state) => state.auth);
 
+ 
+
   return (
     <div className="page">
       <Navbar />
       <div className="inner-ctn">
-        <DashboardHeader username={username} />
+        <DashboardHeader
+          username={username}
+          handleClick={() => alert("success")}
+        />
       </div>
     </div>
   );

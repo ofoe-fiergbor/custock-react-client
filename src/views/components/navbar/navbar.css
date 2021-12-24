@@ -18,6 +18,7 @@
 .user-link{
     color: var(--primary-darker);
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 nav ul li {

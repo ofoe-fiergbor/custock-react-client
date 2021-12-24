@@ -1,7 +1,9 @@
 import React from "react";
+import CreateButton from "../createButton/CreateButton";
+import CreateModal from "../modal/CreateModal";
 import "./dashboardHeader.css";
 
-const DashboardHeader = ({ username }) => {
+const DashboardHeader = ({username, handleClick }) => {
   return (
     <header className="dashboard-header-cta">
       <div className="welcome-ctn">
@@ -11,10 +13,9 @@ const DashboardHeader = ({ username }) => {
         </div>
         <p>Manage your inventory.</p>
       </div>
-      <div onClick={()=> alert("yoh")} className="create-btn">
-        <p>Create</p>
-        <i className="bi bi-plus" />
-      </div>
+      <CreateButton handleClick={()=> handleClick()} />
+
+      <CreateModal />
     </header>
   );
 };

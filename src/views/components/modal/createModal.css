@@ -1,0 +1,21 @@
+@import url("../../../configurations/constants/themeColors.css");
+
+.create-modal-ctn {
+  width: 70vw;
+  height: 70vh;
+}
+
+.modal-menu-item-ctn {
+  height: 2.8em;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 0 0.5em 0 2em;
+  justify-content: space-between;
+}
+
+.modal-menu-item-ctn:hover {
+  background-color: var(--off-white);
+  border-top: 2px solid var(--light-grey);
+  border-bottom: 2px solid var(--light-grey);
+}

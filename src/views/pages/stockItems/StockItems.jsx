@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 const StockItems = () => {
-    return (
-        <div>
-            <h1>StockItems</h1>
-        </div>
-    )
-}
+  return (
+    <div className="page">
+      <Navbar />
+      <div className="inner-ctn">
+          <h1>stock items</h1>
+      </div>
+    </div>
+  );
+};
 
-export default StockItems
+export default StockItems;

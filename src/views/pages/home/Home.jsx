@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="page">
       <Navbar />
-      <div className="dashboard-ctn">
+      <div className="inner-ctn">
         <DashboardHeader username={username} />
       </div>
     </div>

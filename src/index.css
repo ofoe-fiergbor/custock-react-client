@@ -17,3 +17,7 @@ body {
 .page {
   background-color: var(--off-white);
 }
+
+.inner-ctn {
+  padding: 0.5em 2em 0 2em;
+}

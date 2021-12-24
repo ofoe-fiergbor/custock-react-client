@@ -1,9 +1,13 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 const Customers = () => {
   return (
-    <div>
-      <h1>Customers</h1>
+    <div className="page">
+      <Navbar />
+      <div className="inner-ctn">
+        <h1>Customers</h1>
+      </div>
     </div>
   );
 };

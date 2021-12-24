@@ -1,0 +1,25 @@
+@import url("../../../configurations/constants/themeColors.css");
+
+
+.navbar-ctna {
+    /* background-color: var(--off-white); */
+    background-color: white;
+    width: 84.37vw;
+    height: 7.5%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5em;
+}
+.user-ctn{
+    align-self: center;
+    margin-right: 3em;
+    
+}
+.user-link{
+    color: var(--primary-darker);
+    font-weight: 600;
+}
+
+nav ul li {
+    cursor: pointer;
+}

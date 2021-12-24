@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "../../../views/components/sidebar/SideBar";
 import Authentication from "../../../views/pages/authentication/Authentication";
+import Customers from "../../../views/pages/customers/Customers";
 import Home from "../../../views/pages/home/Home";
 import StockItems from "../../../views/pages/stockItems/StockItems";
 import Suppliers from "../../../views/pages/supplier/Supplier";
@@ -9,6 +11,7 @@ import Transactions from "../../../views/pages/transaction/Transaction";
 import PrivateRoute from "./PrivateRoute";
 
 const Navigation = () => {
+  const { user } = useSelector((state) => state.auth);
   return (
     <BrowserRouter>
       <div
@@ -16,7 +19,7 @@ const Navigation = () => {
           display: "flex",
         }}
       >
-        <SideBar />
+        {user && <SideBar />}
         <Routes>
           <Route path="/authentication" element={<Authentication />} />
           <Route path="/" element={<PrivateRoute component={<Home />} />} />
@@ -31,6 +34,10 @@ const Navigation = () => {
           <Route
             path="/stockItems"
             element={<PrivateRoute component={<StockItems />} />}
+          />
+          <Route
+            path="/customers"
+            element={<PrivateRoute component={<Customers />} />}
           />
         </Routes>
       </div>

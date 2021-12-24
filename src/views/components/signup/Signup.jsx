@@ -3,9 +3,8 @@ import { Formik } from "formik";
 import { signup } from "../../../configurations/constants/authenticationValues";
 import Input from "../input/Input";
 import "./signup.css";
-
 import { ApiService } from "../../../configurations/services/api/ApiService";
-
+import Alert from "../../components/alert/Alert";
 /**
  *
  * firstname
@@ -15,14 +14,32 @@ import { ApiService } from "../../../configurations/services/api/ApiService";
  * password
  */
 
-const Signup = () => {
+const Signup = ({ login }) => {
+  const [showAlert, setShowAlert] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const [message, setMessage] = React.useState("");
 
   const handleFormSubmit = async (values) => {
     const response = await ApiService.auth.register(values);
-    console.log(response);
+    if (!response.status.toString().match(/^2/i)) {
+      setMessage(response.meassage);
+      setShowAlert(true);
+      setSuccess(false);
+    } else {
+      setMessage(response.data);
+      setShowAlert(true);
+      setSuccess(true);
+      login(true);
+    }
   };
   return (
     <div className="container">
+      {showAlert && (
+        <Alert
+          message={message}
+          styleName={`${success ? "alert-primary" : "alert-danger"}`}
+        />
+      )}
       <h2>Sign up</h2>
       <p>Create account to start using CuStock.</p>
       <div className="row">
@@ -68,20 +85,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-/**
- * <form>
-          <div className="mb-3">
-            <label className="form-label">Email address</label>
-            <input type="email" className="form-control" />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Password</label>
-            <input type="password" className="form-control" />
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
- */

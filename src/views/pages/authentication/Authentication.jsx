@@ -11,7 +11,7 @@ const Authentication = () => {
   return (
     <div className="auth-container">
       <div className="auth-left">
-        {isLogin ? <Login /> : <Signup />}
+        {isLogin ? <Login /> : <Signup login={(a) => setIsLogin(a)}/>}
         <div className="auth-toggle-form" onClick={toggleForm}>
           {isLogin
             ? "Don't have an account? Signup"

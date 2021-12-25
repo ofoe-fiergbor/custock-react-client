@@ -1,15 +1,24 @@
 import {
   configureStore,
   combineReducers,
-  getDefaultMiddleware
+  getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
-import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist/es/constants";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from "redux-persist/es/constants";
 import storage from "redux-persist/lib/storage";
 import Authentication from "./Authentication";
+import Stock from "./Stock";
 
 const rootReducer = combineReducers({
   auth: Authentication,
+  stock: Stock,
 });
 
 const persistConfig = {

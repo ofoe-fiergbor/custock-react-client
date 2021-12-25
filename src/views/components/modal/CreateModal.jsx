@@ -5,12 +5,13 @@ import NewStock from "../newStock/NewStock"
 import NewInvoice from "../newInvoice/NewInvoice"
 import NewCustomer from "../newCustomer/NewCustomer"
 import NewSupplier from "../newSupplier/NewSupplier"
+import NewProduct from "../newProduct/NewProduct";
 
 
 const CreateModal = () => {
   const [localStage, setLocalStage] = React.useState(0);
 
-  const actions = ["menu", "stock", "invoice", "customer", "supplier"]
+  const actions = ["menu", "stock", "invoice", "customer", "supplier", "product"]
 
   const swap = (delta) => {
     if (localStage + 1 < actions.length) {
@@ -49,6 +50,7 @@ const CreateModal = () => {
             {actions[localStage] === "invoice" && <NewInvoice migrate={home} />}
             {actions[localStage] === "customer" && <NewCustomer migrate={home} />}
             {actions[localStage] === "supplier" && <NewSupplier migrate={home} />}
+            {actions[localStage] === "product" && <NewProduct migrate={home} />}
           </div>
           <div className="modal-footer">
             <button

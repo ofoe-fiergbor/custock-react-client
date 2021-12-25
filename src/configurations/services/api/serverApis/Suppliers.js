@@ -3,7 +3,8 @@ import Request from "../Request";
 const Suppliers = (() => {
   const resource = "/suppliers";
   return {
-    createSupplier: (body) => Request.post(`${resource}/supplier`, body),
+    create: (body) => Request.post(`${resource}/supplier`, body),
+    fetchAll: () => Request.get(`${resource}`),
   };
 })();
 

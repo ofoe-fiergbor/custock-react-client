@@ -14,10 +14,8 @@ const Authentication = createSlice({
     },
     setUserType: (state, action) => {
       state.userType = action.payload;
-      // localStorage.setItem("userType", action.payload)
     },
     logout: () => {
-      // localStorage.removeItem("userType")
       return initialState;
     },
   },

@@ -13,6 +13,7 @@ const Request = (() => {
       withCredentials: false,
       method: method.toLowerCase(),
     };
+    // console.log(config, body)
     if (method === requestMethod.GET && body) config.params = body;
     else if (body) config.data = body;
     return axios(Object.freeze(config));
@@ -24,6 +25,8 @@ const Request = (() => {
     put: async (resource, body) => Response(request(requestMethod.PUT, resource, body)),
     post: async (resource, params) =>Response(request(requestMethod.POST, resource, params)),
     patch: async (resource, body) =>Response(request(requestMethod.PATCH, resource, body)),
+    get: async (resource, params) => Response(request(requestMethod.GET, resource, params)),
+
   };
 })();
 

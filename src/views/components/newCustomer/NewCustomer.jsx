@@ -3,7 +3,7 @@ import React from "react";
 const NewCustomer = ({ migrate }) => {
   return (
     <div>
-      <h1 onClick={() => migrate(0)}>NewCustomer</h1>
+      <h1 onClick={() => migrate(-3)}>NewCustomer</h1>
     </div>
   );
 };

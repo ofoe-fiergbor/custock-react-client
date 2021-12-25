@@ -10,18 +10,18 @@ import NewSupplier from "../newSupplier/NewSupplier"
 const CreateModal = () => {
   const [localStage, setLocalStage] = React.useState(0);
 
-  // const stages = ["menu", "form", "submission"];
   const actions = ["menu", "stock", "invoice", "customer", "supplier"]
 
   const swap = (delta) => {
     if (localStage + 1 < actions.length) {
       const _stage = localStage + delta;
-
       setLocalStage(_stage);
     } else {
       setLocalStage(0);
     }
   };
+  const home = () => setLocalStage(0)
+
   return (
     <div
       tabIndex="-1"
@@ -45,10 +45,10 @@ const CreateModal = () => {
                 ))}
               </>
             )}
-            {actions[localStage] === "stock" && <NewStock migrate={swap} />}
-            {actions[localStage] === "invoice" && <NewInvoice migrate={swap} />}
-            {actions[localStage] === "customer" && <NewCustomer migrate={swap} />}
-            {actions[localStage] === "supplier" && <NewSupplier migrate={swap} />}
+            {actions[localStage] === "stock" && <NewStock migrate={home} />}
+            {actions[localStage] === "invoice" && <NewInvoice migrate={home} />}
+            {actions[localStage] === "customer" && <NewCustomer migrate={home} />}
+            {actions[localStage] === "supplier" && <NewSupplier migrate={home} />}
           </div>
           <div className="modal-footer">
             <button

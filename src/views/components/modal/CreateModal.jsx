@@ -1,8 +1,6 @@
 import React from "react";
 import "./createModal.css";
 import { createMenu } from "../../../configurations/constants/createMenu";
-import Action from "../action/Action";
-import ActionSubmission from "../actionSubmission/ActionSubmission";
 import NewStock from "../newStock/NewStock"
 import NewInvoice from "../newInvoice/NewInvoice"
 import NewCustomer from "../newCustomer/NewCustomer"

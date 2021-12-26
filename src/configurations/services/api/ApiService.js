@@ -9,6 +9,6 @@ export const ApiService = {
   customers: Customers,
   suppliers: Suppliers,
   auth: Authentication,
-  transactions: Transactions,
+  transaction: Transactions,
 };
 

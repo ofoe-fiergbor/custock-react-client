@@ -18,3 +18,10 @@ export const createNewProduct = {
   userId: undefined,
 };
 
+export const createReceipt = {
+  description: "",
+  quantity: undefined,
+  supplierId: undefined,
+  productId: undefined,
+  userId: undefined,
+};

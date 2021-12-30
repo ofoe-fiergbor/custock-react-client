@@ -5,7 +5,7 @@ import ModalHeader from "../modalHeader/ModalHeader";
 import Input from "../input/Input";
 import { useSelector } from "react-redux";
 import { ApiService } from "../../../configurations/services/api/ApiService";
-import Toast from "../toast/Toast";
+import ModalActionButtons from "../modalActionBtns/ModalActionButtons";
 
 const NewSupplier = ({ migrate }) => {
   const {
@@ -44,18 +44,7 @@ const NewSupplier = ({ migrate }) => {
               name="phoneNumber"
               value={values.phoneNumber}
             />
-            <div className="flex">
-              <button
-                type="button"
-                onClick={() => migrate()}
-                className="btn btn-secondary"
-              >
-                Go Back
-              </button>
-              <button type="submit" className="btn btn-primary">
-                {isSubmitting ? "Loading..." : "Submit"}
-              </button>
-            </div>
+           <ModalActionButtons migrate={migrate} isSubmitting={isSubmitting}/>
           </form>
         )}
       </Formik>

@@ -12,7 +12,7 @@ const Product = createSlice({
   name: "stock",
   initialState,
   reducers: {
-    setStocks: (state, action) => {
+    setProducts: (state, action) => {
       state.products = action.payload;
     },
     setSuppliers: (state, action) => {
@@ -34,7 +34,7 @@ const Product = createSlice({
 });
 
 export const {
-  setStocks,
+  setProducts,
   setSuppliers,
   setInvoices,
   setCustomers,

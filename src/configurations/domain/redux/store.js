@@ -18,7 +18,7 @@ import Product from "./Product";
 
 const rootReducer = combineReducers({
   auth: Authentication,
-  Product: Product,
+  product: Product,
 });
 
 const persistConfig = {

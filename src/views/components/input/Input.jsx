@@ -1,7 +1,14 @@
 import React from "react";
 import { useFormikContext } from "formik";
 
-const Input = ({ label = "Label", type = "text", name, value }) => {
+const Input = ({
+  label = "Label",
+  type = "text",
+  name,
+  value,
+  placeholder = undefined,
+  required = true,
+}) => {
   const [showPassword, setShowPassword] = React.useState(false);
   const { handleBlur, handleChange } = useFormikContext();
 
@@ -16,6 +23,8 @@ const Input = ({ label = "Label", type = "text", name, value }) => {
           onBlur={handleBlur}
           onChange={handleChange}
           className="form-control"
+          placeholder={placeholder}
+          required={required}
         />
         {type === "password" && (
           <span

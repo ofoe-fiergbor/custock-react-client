@@ -4,7 +4,7 @@ import "./home.css";
 import { useDispatch, useSelector } from "react-redux";
 import DashboardHeader from "../../components/dashboardHeader/DashboardHeader";
 import { ApiService } from "../../../configurations/services/api/ApiService";
-
+import { setSuppliers } from "../../../configurations/domain/redux/Product";
 
 const Home = () => {
   const {
@@ -13,6 +13,18 @@ const Home = () => {
 
   const dispatch = useDispatch();
 
+  const fetchSuppliers = async () => {
+    const { data, status, message } = await ApiService.suppliers.fetchAll();
+    if (!status.toString().match(/^2/i)) {
+      alert(message);
+    } else {
+      dispatch(setSuppliers(data));
+    }
+  };
+
+  useEffect(() => {
+    fetchSuppliers();
+  }, []);
 
   return (
     <div className="page">

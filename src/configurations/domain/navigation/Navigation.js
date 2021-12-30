@@ -7,7 +7,7 @@ import Customers from "../../../views/pages/customers/Customers";
 import Home from "../../../views/pages/home/Home";
 import StockItems from "../../../views/pages/stockItems/StockItems";
 import Suppliers from "../../../views/pages/supplier/Supplier";
-import Transactions from "../../../views/pages/transaction/Transaction";
+import Receipts from "../../../views/pages/receipts/Receipts";
 import PrivateRoute from "./PrivateRoute";
 
 const Navigation = () => {
@@ -28,8 +28,8 @@ const Navigation = () => {
             element={<PrivateRoute component={<Suppliers />} />}
           />
           <Route
-            path="/transactions"
-            element={<PrivateRoute component={<Transactions />} />}
+            path="/receipts"
+            element={<PrivateRoute component={<Receipts />} />}
           />
           <Route
             path="/stockItems"

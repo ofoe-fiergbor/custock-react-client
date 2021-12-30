@@ -33,7 +33,7 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <Input
                 label="Email"
-                name="usernameOrEmail"
+                name="email"
                 type="email"
                 value={values.usernameOrEmail}
               />

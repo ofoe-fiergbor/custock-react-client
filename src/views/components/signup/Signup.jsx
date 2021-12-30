@@ -9,7 +9,6 @@ import Alert from "../../components/alert/Alert";
  *
  * firstname
  * lastname
- * username
  * email
  * password
  */
@@ -56,7 +55,6 @@ const Signup = ({ login }) => {
                 name="lastName"
                 value={values.lastName}
               />
-              <Input label="Username" name="username" value={values.username} />
               <Input
                 label="Email"
                 name="email"

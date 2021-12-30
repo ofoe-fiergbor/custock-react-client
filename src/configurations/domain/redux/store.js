@@ -14,11 +14,11 @@ import {
 } from "redux-persist/es/constants";
 import storage from "redux-persist/lib/storage";
 import Authentication from "./Authentication";
-import Stock from "./Stock";
+import Product from "./Product";
 
 const rootReducer = combineReducers({
   auth: Authentication,
-  stock: Stock,
+  Product: Product,
 });
 
 const persistConfig = {

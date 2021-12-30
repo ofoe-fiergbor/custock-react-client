@@ -1,14 +1,12 @@
-import Items from "./serverApis/Items";
-import Customers from "./serverApis/Customers";
-import Suppliers from "./serverApis/Suppliers";
-import Transactions from "./serverApis/Transactions";
+import Product from "./serverApis/Product";
+import Suppliers from "./serverApis/Supplier";
+import Transaction from "./serverApis/Transaction";
 import Authentication from "./serverApis/Authentication";
 
 export const ApiService = {
-  items: Items,
-  customers: Customers,
+  product: Product,
   suppliers: Suppliers,
   auth: Authentication,
-  transaction: Transactions,
+  transaction: Transaction,
 };
 

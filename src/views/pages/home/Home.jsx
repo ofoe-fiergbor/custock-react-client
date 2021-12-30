@@ -7,6 +7,7 @@ import { ApiService } from "../../../configurations/services/api/ApiService";
 import {
   setSuppliers,
   setProducts,
+  setInvoices,
 } from "../../../configurations/domain/redux/Product";
 
 const Home = () => {
@@ -33,9 +34,20 @@ const Home = () => {
     }
   };
 
+  const fetchAllSales = async () => {
+    const { data, status, message } =
+      await ApiService.transaction.fetchAllInvoices();
+    if (!status.toString().match(/^2/i)) {
+      alert(message);
+    } else {
+      dispatch(setInvoices(data));
+    }
+  };
+
   useEffect(() => {
     fetchSuppliers();
     fetchProducts();
+    fetchAllSales();
   }, []);
 
   return (

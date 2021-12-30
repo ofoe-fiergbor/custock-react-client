@@ -3,10 +3,10 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "../../../views/components/sidebar/SideBar";
 import Authentication from "../../../views/pages/authentication/Authentication";
-import Customers from "../../../views/pages/customers/Customers";
+import Suppliers from "../../../views/pages/suppliers/Suppliers";
 import Home from "../../../views/pages/home/Home";
 import StockItems from "../../../views/pages/stockItems/StockItems";
-import Suppliers from "../../../views/pages/supplier/Supplier";
+import Sales from "../../../views/pages/sales/Sales";
 import Receipts from "../../../views/pages/receipts/Receipts";
 import PrivateRoute from "./PrivateRoute";
 
@@ -24,8 +24,8 @@ const Navigation = () => {
           <Route path="/authentication" element={<Authentication />} />
           <Route path="/" element={<PrivateRoute component={<Home />} />} />
           <Route
-            path="/suppliers"
-            element={<PrivateRoute component={<Suppliers />} />}
+            path="/sales"
+            element={<PrivateRoute component={<Sales />} />}
           />
           <Route
             path="/receipts"
@@ -36,8 +36,8 @@ const Navigation = () => {
             element={<PrivateRoute component={<StockItems />} />}
           />
           <Route
-            path="/customers"
-            element={<PrivateRoute component={<Customers />} />}
+            path="/suppliers"
+            element={<PrivateRoute component={<Suppliers />} />}
           />
         </Routes>
       </div>

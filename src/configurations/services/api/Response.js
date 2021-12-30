@@ -3,7 +3,7 @@ const Response = async(response) =>{
         if(error.response) {
             return{
                 status: error.response.status,
-                meassage: error.response.data,
+                message: error.response.data,
             }
         }
 

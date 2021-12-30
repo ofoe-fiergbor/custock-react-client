@@ -29,7 +29,6 @@ const Home = () => {
     if (!status.toString().match(/^2/i)) {
       alert(message);
     } else {
-      console.log(data)
       dispatch(setProducts(data));
     }
   };

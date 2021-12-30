@@ -25,3 +25,21 @@ export const createReceipt = {
   productId: undefined,
   userId: undefined,
 };
+
+export const createInvoice = {
+  description: "",
+  buyer: "",
+  socialMedia: "",
+  quantity: undefined,
+  productId: undefined,
+  userId: undefined,
+};
+
+export const socialMedia = [
+  { value: "TWITTER", label: "Twitter" },
+  { value: "FACEBOOK", label: "Facebook" },
+  { value: "INSTAGRAM", label: "Instagram" },
+  { value: "WHATSAPP", label: "WhatsApp" },
+  { value: "TIKTOK", label: "Tiktok" },
+  { value: "OTHER", label: "Other" },
+];

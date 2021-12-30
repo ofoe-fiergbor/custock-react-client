@@ -1,29 +1,27 @@
-import "./signup.css";
-import React from "react";
 import { Formik } from "formik";
-import Input from "../input/Input";
-import Alert from "../../components/alert/Alert";
-import { ApiService } from "../../../configurations/services/api/ApiService";
+import React from "react";
 import { signup } from "../../../configurations/constants/authenticationValues";
+import { ApiService } from "../../../configurations/services/api/ApiService";
+import Alert from "../../components/alert/Alert";
+import Input from "../input/Input";
+import "./signup.css";
 
 const Signup = ({ login }) => {
-  const [showAlert, setShowAlert] = React.useState(false);
-  const [alert, setAlert] = React.useState("");
+  const [alert, setAlert] = React.useState(undefined);
 
   const handleFormSubmit = async (values) => {
     const { status, message } = await ApiService.auth.register(values);
     if (!status.toString().match(/^2/i)) {
       setAlert(message);
-      setShowAlert(true);
     } else {
       login(true);
     }
   };
   return (
     <div className="container">
-      {showAlert && <Alert message={alert} styleName="alert-danger" />}
       <h2>Sign up</h2>
       <p>Create account to start using CuStock.</p>
+      {alert && <Alert message={alert} styleName="alert-danger" />}
       <div className="row">
         <Formik initialValues={signup} onSubmit={handleFormSubmit}>
           {({ values, handleSubmit, isSubmitting }) => (

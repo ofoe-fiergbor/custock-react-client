@@ -23,24 +23,24 @@ const SalesOffCanvas = ({ invoice, setInvoice }) => {
       <div className="offcanvas-body">
         <p className="detail">
           <span id="label">Date:</span>{" "}
-          {dayjs(invoice.timestamp).format("DD/MM/YYYY")}
+          {dayjs(invoice?.timestamp).format("DD/MM/YYYY")}
         </p>
         <p className="detail">
-          <span id="label">Description:</span> {invoice.description}
+          <span id="label">Description:</span> {invoice?.description}
         </p>
         <p className="detail">
-          <span id="label">Product:</span> {invoice.product.name}
+          <span id="label">Product:</span> {invoice?.product?.name}
         </p>
         <p className="detail">
-          <span id="label">Quantity:</span> {formatNumbers(invoice.quantity)}{" "}
-          {invoice.product.unitOfMeasurement}
+          <span id="label">Quantity:</span> {formatNumbers(invoice?.quantity)}{" "}
+          {invoice?.product?.unitOfMeasurement}
         </p>
         <p className="detail">
           <span id="label">Customer/Buyer:</span>
-          {invoice.buyer}
+          {invoice?.buyer}
         </p>
         <p className="detail">
-          <span id="label">Social Media:</span> {invoice.socialMedia}
+          <span id="label">Social Media:</span> {invoice?.socialMedia}
         </p>
       </div>
     </div>

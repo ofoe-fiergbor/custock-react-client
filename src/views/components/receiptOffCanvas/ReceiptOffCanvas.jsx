@@ -24,29 +24,29 @@ const ReceiptOffCanvas = ({ receipt, unrenderDetail }) => {
       <div className="offcanvas-body">
         <p className="detail">
           <span id="label">Date:</span>{" "}
-          {dayjs(receipt.timestamp).format("DD/MM/YYYY")}
+          {dayjs(receipt?.timestamp).format("DD/MM/YYYY")}
         </p>
         <p className="detail">
-          <span id="label">Description:</span> {receipt.description}
+          <span id="label">Description:</span> {receipt?.description}
         </p>
         <p className="detail">
-          <span id="label">Product:</span> {receipt.product.name}
+          <span id="label">Product:</span> {receipt?.product?.name}
         </p>
         <p className="detail">
-          <span id="label">Quantity:</span> {formatNumbers(receipt.quantity)}{" "}
-          {receipt.product.unitOfMeasurement}
+          <span id="label">Quantity:</span> {formatNumbers(receipt?.quantity)}{" "}
+          {receipt?.product?.unitOfMeasurement}
         </p>
         <p className="detail">
           <span id="label">Current Balance:</span>{" "}
-          {formatNumbers(receipt.product.balance)}{" "}
-          {receipt.product.unitOfMeasurement}
+          {formatNumbers(receipt?.product?.balance)}{" "}
+          {receipt?.product?.unitOfMeasurement}
         </p>
         <p className="detail">
-          <span id="label">Supplier:</span> {receipt.supplier.name}
+          <span id="label">Supplier:</span> {receipt?.supplier?.name}
         </p>
         <p className="detail">
           <span id="label">Supplier Contact:</span>{" "}
-          {receipt.supplier.phoneNumber}
+          {receipt?.supplier?.phoneNumber}
         </p>
       </div>
     </div>

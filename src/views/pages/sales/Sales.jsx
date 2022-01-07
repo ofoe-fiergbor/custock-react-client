@@ -29,28 +29,29 @@ const Sales = () => {
             </tr>
           </thead>
           <tbody>
-            {invoices.map((invoice) => (
-              <tr key={invoice.id}>
-                <td>{dayjs(invoice.timestamp).format("DD/MM/YYYY")}</td>
-                <td>{invoice.buyer}</td>
-                <td>{invoice.socialMedia}</td>
-                <td>{invoice.product?.name}</td>
-                <td>{invoice.quantity}</td>
-                <td
-                  className="more"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasRight"
-                  aria-controls="offcanvasRight"
-                  onClick={() => displayDetails(invoice.id)}
-                >
-                  {"more>>>"}
-                </td>
-              </tr>
-            ))}
+            {invoices &&
+              invoices?.map((invoice) => (
+                <tr key={invoice?.id}>
+                  <td>{dayjs(invoice?.timestamp)?.format("DD/MM/YYYY")}</td>
+                  <td>{invoice?.buyer}</td>
+                  <td>{invoice?.socialMedia}</td>
+                  <td>{invoice?.product?.name}</td>
+                  <td>{invoice?.quantity}</td>
+                  <td
+                    className="more"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"
+                    onClick={() => displayDetails(invoice.id)}
+                  >
+                    {"more>>>"}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
-      {invoice && <SalesOffCanvas invoice={invoice} setInvoice={setInvoice}/>}
+      {invoice && <SalesOffCanvas invoice={invoice} setInvoice={setInvoice} />}
     </div>
   );
 };

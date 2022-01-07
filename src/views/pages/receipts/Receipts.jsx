@@ -29,18 +29,18 @@ const Receipts = () => {
             </tr>
           </thead>
           <tbody>
-            {receipts.map((receipt) => (
-              <tr key={receipt.id}>
-                <td>{dayjs(receipt.timestamp).format("DD/MM/YYYY")}</td>
-                <td>{receipt.product.name}</td>
-                <td>{formatNumbers(receipt.quantity)}</td>
-                <td>{receipt.supplier.name}</td>
+            {receipts && receipts.map((receipt) => (
+              <tr key={receipt?.id}>
+                <td>{dayjs(receipt?.timestamp).format("DD/MM/YYYY")}</td>
+                <td>{receipt?.product?.name}</td>
+                <td>{formatNumbers(receipt?.quantity)}</td>
+                <td>{receipt?.supplier?.name}</td>
                 <td
                   className="more"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasRight"
                   aria-controls="offcanvasRight"
-                  onClick={() => displayDetails(receipt.id)}
+                  onClick={() => displayDetails(receipt?.id)}
                 >
                   {"more>>>"}
                 </td>

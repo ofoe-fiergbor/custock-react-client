@@ -22,13 +22,13 @@ const StockItems = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
-              <tr key={product.id}>
-                <th scope="row">{product.id}</th>
-                <td>{product.name}</td>
-                <td>{formatNumbers(product.balance)}</td>
-                <td className="uom">{product.unitOfMeasurement}</td>
-                <td>{product.supplier.name}</td>
+            {products && products?.map((product) => (
+              <tr key={product?.id}>
+                <th scope="row">{product?.id}</th>
+                <td>{product?.name}</td>
+                <td>{formatNumbers(product?.balance)}</td>
+                <td className="uom">{product?.unitOfMeasurement}</td>
+                <td>{product?.supplier?.name}</td>
               </tr>
             ))}
           </tbody>

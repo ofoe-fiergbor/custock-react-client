@@ -76,7 +76,7 @@ const Home = () => {
         <div className="container-fluid dashboard">
           <div className="row">
             {products && products?.map((product) => (
-              <DashboardProductCard key={product.id} product={product} />
+              <DashboardProductCard key={product?.id} product={product} />
             ))}
           </div>
         </div>

@@ -18,11 +18,11 @@ const Suppliers = () => {
             </tr>
           </thead>
           <tbody>
-            {suppliers.map((supplier) => (
-              <tr key={supplier.id}>
-                <th scope="row">{supplier.id}</th>
-                <td>{supplier.name}</td>
-                <td>{supplier.phoneNumber}</td>
+            {suppliers && suppliers?.map((supplier) => (
+              <tr key={supplier?.id}>
+                <th scope="row">{supplier?.id}</th>
+                <td>{supplier?.name}</td>
+                <td>{supplier?.phoneNumber}</td>
               </tr>
             ))}
           </tbody>

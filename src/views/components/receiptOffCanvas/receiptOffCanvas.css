@@ -1,0 +1,9 @@
+@import url('../../../configurations/constants/themeColors.css');
+
+#label {
+    font-weight: bold;
+}
+
+.detail{
+    border-bottom: solid 0.2em var(--grey);
+}

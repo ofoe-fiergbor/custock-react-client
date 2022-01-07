@@ -3,9 +3,16 @@ import { useSelector } from "react-redux";
 import Navbar from "../../components/navbar/Navbar";
 import "./sales.css";
 import dayjs from "dayjs";
+import SalesOffCanvas from "../../components/saleOffCanvas/SalesOffCanvas";
 
 const Sales = () => {
+  const [invoice, setInvoice] = React.useState(undefined);
+
   const { invoices } = useSelector((state) => state.product);
+
+  const displayDetails = (id) => {
+    setInvoice(invoices.filter((receipt) => receipt.id === id)[0]);
+  };
   return (
     <div className="page">
       <Navbar />
@@ -29,12 +36,21 @@ const Sales = () => {
                 <td>{invoice.socialMedia}</td>
                 <td>{invoice.product?.name}</td>
                 <td>{invoice.quantity}</td>
-                <td>{"more>>>"}</td>
+                <td
+                  className="more"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  onClick={() => displayDetails(invoice.id)}
+                >
+                  {"more>>>"}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {invoice && <SalesOffCanvas invoice={invoice} setInvoice={setInvoice}/>}
     </div>
   );
 };

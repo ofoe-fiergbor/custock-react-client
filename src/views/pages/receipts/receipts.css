@@ -1,7 +1,18 @@
+@import url("../../../configurations/constants/themeColors.css");
+
 .stock-inner-ctn {
-    background-color: white;
-    width: 70vw;
-    margin-top: 5vh;
-    margin-left: 7.185vw;
-    margin-right: 7.185vw;
-  }
+  background-color: white;
+  width: 70vw;
+  margin-top: 5vh;
+  margin-left: 7.185vw;
+  margin-right: 7.185vw;
+}
+
+.more {
+  cursor: pointer;
+  color: var(--blue);
+}
+
+.more:hover {
+  text-decoration: underline;
+}

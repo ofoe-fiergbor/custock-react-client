@@ -4,9 +4,15 @@ import "./receipts.css";
 import { useSelector } from "react-redux";
 import { formatNumbers } from "../../../utils/utils";
 import dayjs from "dayjs";
+import ReceiptOffCanvas from "../../components/receiptOffCanvas/ReceiptOffCanvas";
 
 const Receipts = () => {
+  const [receipt, setReceipt] = React.useState(undefined);
   const { receipts } = useSelector((state) => state.product);
+
+  const displayDetails = (id) => {
+    setReceipt(receipts.filter((receipt) => receipt.id === id)[0]);
+  };
 
   return (
     <div className="page">
@@ -29,12 +35,21 @@ const Receipts = () => {
                 <td>{receipt.product.name}</td>
                 <td>{formatNumbers(receipt.quantity)}</td>
                 <td>{receipt.supplier.name}</td>
-                <td>{"more>>>"}</td>
+                <td
+                  className="more"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                  onClick={() => displayDetails(receipt.id)}
+                >
+                  {"more>>>"}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+      {receipt && <ReceiptOffCanvas unrenderDetail={setReceipt} receipt={receipt} />}
     </div>
   );
 };

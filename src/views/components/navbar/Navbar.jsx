@@ -1,19 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { logout } from "../../../configurations/domain/redux/Authentication";
+import { clearState } from "../../../configurations/domain/redux/Product";
 import { ApiService } from "../../../configurations/services/api/ApiService";
 import "./navbar.css";
 
 const Navbar = () => {
-  const {user:{firstName, lastName}} = useSelector((state) => state.auth);
+  const {
+    user: { firstName, lastName },
+  } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await ApiService.auth.logout();
-    navigate("authentication");
-    dispatch(logout());
+    const { status, message } = await ApiService.auth.logout();
+    if (!status.toString().match(/^2/i)) {
+      alert(message);
+    } else {
+      dispatch(clearState());
+      dispatch(logout());
+    }
   };
   return (
     <nav className="navbar-ctna">

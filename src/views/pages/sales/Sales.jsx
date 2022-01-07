@@ -29,7 +29,7 @@ const Sales = () => {
                 <td>{invoice.socialMedia}</td>
                 <td>{invoice.product?.name}</td>
                 <td>{invoice.quantity}</td>
-                <td>more>></td>
+                <td>more</td>
               </tr>
             ))}
           </tbody>

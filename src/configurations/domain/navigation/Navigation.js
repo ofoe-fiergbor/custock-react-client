@@ -11,7 +11,7 @@ import Receipts from "../../../views/pages/receipts/Receipts";
 import PrivateRoute from "./PrivateRoute";
 
 const Navigation = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { authToken } = useSelector((state) => state.auth);
   return (
     <BrowserRouter>
       <div
@@ -19,7 +19,7 @@ const Navigation = () => {
           display: "flex",
         }}
       >
-        {user && <SideBar />}
+        {authToken && <SideBar />}
         <Routes>
           <Route path="/authentication" element={<Authentication />} />
           <Route path="/" element={<PrivateRoute component={<Home />} />} />

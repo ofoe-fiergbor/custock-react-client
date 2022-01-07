@@ -3,13 +3,15 @@ import ModalHeader from "../modalHeader/ModalHeader";
 import { Formik } from "formik";
 import { createNewProduct } from "../../../configurations/constants/createMenu";
 import Input from "../input/Input";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ModalActionButtons from "../modalActionBtns/ModalActionButtons";
 import { ApiService } from "../../../configurations/services/api/ApiService";
+import { updateProducts } from "../../../configurations/domain/redux/Product";
 
 const NewProduct = ({ migrate }) => {
   const { suppliers } = useSelector((state) => state.product);
   const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   const onSubmit = async (values) => {
     if (values.supplierId == null) {
@@ -17,11 +19,12 @@ const NewProduct = ({ migrate }) => {
       return;
     }
     values.userId = user.id;
-    const { status, message } = await ApiService.product.create(values);
+    const { status, message, data } = await ApiService.product.create(values);
     if (!status.toString().match(/^2/i)) {
       alert(message);
     } else {
       migrate();
+      dispatch(updateProducts(data));
       alert("Product created successfully");
     }
   };

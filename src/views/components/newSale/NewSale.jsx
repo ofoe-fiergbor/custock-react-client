@@ -1,20 +1,22 @@
 import { Formik } from "formik";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   createInvoice,
   socialMedia,
 } from "../../../configurations/constants/createMenu";
+import { updateInvoices } from "../../../configurations/domain/redux/Product";
 import { ApiService } from "../../../configurations/services/api/ApiService";
 import Input from "../input/Input";
 import ModalActionButtons from "../modalActionBtns/ModalActionButtons";
 import ModalHeader from "../modalHeader/ModalHeader";
 
 const NewSale = ({ migrate }) => {
+  const dispatch = useDispatch();
   const { products } = useSelector((state) => state.product);
   const { user } = useSelector((state) => state.auth);
 
-  const onSubmit = async(values) => {
+  const onSubmit = async (values) => {
     if (values.productId === null) {
       alert("Choose a product");
     }
@@ -25,12 +27,14 @@ const NewSale = ({ migrate }) => {
     values.productId = Number(temp);
     values.userId = user.id;
 
-    const {data, status, message} = await ApiService.transaction.createInvoice(values)
-    console.log({data, status, message} )
+    const { data, status, message } =
+      await ApiService.transaction.createInvoice(values);
+    // console.log({data, status, message} )
     if (!status.toString().match(/^2/i)) {
-      alert(message)
+      alert(message);
     } else {
-      migrate()
+      migrate();
+      dispatch(updateInvoices(data));
       alert("Invoice was created successfully.");
     }
   };

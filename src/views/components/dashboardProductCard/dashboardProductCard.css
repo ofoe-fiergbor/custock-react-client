@@ -1,0 +1,24 @@
+@import url('../../../configurations/constants/themeColors.css');
+
+.dbpcard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+.dbpcard-balance{
+    display: flex;
+}
+.dbpcard-balance p {
+    font-size: small;
+    text-transform: lowercase;
+    align-self: flex-end;
+    color: var(--grey);
+}
+.dbpcard-balance h1 {
+    color: var(--blue);
+}
+.dbpcard-product{
+    margin-bottom: 0;
+    font-weight: bold;
+}

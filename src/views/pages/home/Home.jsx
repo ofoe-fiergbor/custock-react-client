@@ -9,12 +9,14 @@ import {
   setProducts,
   setInvoices,
 } from "../../../configurations/domain/redux/Product";
+import DashboardProductCard from "../../components/dashboardProductCard/DashboardProductCard";
 
 const Home = () => {
   const dispatch = useDispatch();
   const {
     user: { firstName },
   } = useSelector((state) => state.auth);
+  const { products } = useSelector((state) => state.product);
 
   const fetchSuppliers = async () => {
     const { data, status, message } = await ApiService.suppliers.fetchAll();
@@ -58,6 +60,14 @@ const Home = () => {
           username={firstName}
           handleClick={() => alert("success")}
         />
+
+        <div className="container-fluid dashboard">
+          <div className="row">
+            {products.map((product) => (
+              <DashboardProductCard key={product.id} product={product}/>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import {
   setSuppliers,
   setProducts,
   setInvoices,
+  setReceipts,
 } from "../../../configurations/domain/redux/Product";
 import DashboardProductCard from "../../components/dashboardProductCard/DashboardProductCard";
 
@@ -46,10 +47,21 @@ const Home = () => {
     }
   };
 
+  const fetchAllReceipts = async () => {
+    const { data, status, message } =
+      await ApiService.transaction.fetchAllReceipts();
+    if (!status.toString().match(/^2/i)) {
+      alert(message);
+    } else {
+      dispatch(setReceipts(data));
+    }
+  };
+
   useEffect(() => {
     fetchSuppliers();
     fetchProducts();
     fetchAllSales();
+    fetchAllReceipts()
   }, []);
 
   return (
@@ -64,7 +76,7 @@ const Home = () => {
         <div className="container-fluid dashboard">
           <div className="row">
             {products.map((product) => (
-              <DashboardProductCard key={product.id} product={product}/>
+              <DashboardProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>

@@ -42,7 +42,7 @@ const Product = createSlice({
     },
 
     setReceipts: (state, action) => {
-      state.customers = action.payload;
+      state.receipts = action.payload;
     },
     updateReceipts: (state, action) => {
       state.receipts = [...state.receipts, action.payload];

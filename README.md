@@ -1,4 +1,4 @@
-## Available Scripts
+## Custock Inventory Management
 
 This is a stock/inventory management webapp for Social Media Entrepreneurs.
 Custock helps you keep records of:

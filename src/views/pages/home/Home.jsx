@@ -12,6 +12,7 @@ import {
 } from "../../../configurations/domain/redux/Product";
 import DashboardProductCard from "../../components/dashboardProductCard/DashboardProductCard";
 
+
 const Home = () => {
   const dispatch = useDispatch();
   const {
@@ -62,6 +63,7 @@ const Home = () => {
     fetchProducts();
     fetchAllSales();
     fetchAllReceipts()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

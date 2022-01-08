@@ -10,8 +10,10 @@ const Authentication = () => {
   const toggleForm = () => setIsLogin((prev) => !prev);
   return (
     <div className="auth-container">
+    {/* <h1 className="mobile">App only available in destop only.</h1> */}
       <div className="auth-left">
-        {isLogin ? <Login /> : <Signup login={(a) => setIsLogin(a)}/>}
+        <h1>Custock</h1>
+        {isLogin ? <Login /> : <Signup login={(a) => setIsLogin(a)} />}
         <div className="auth-toggle-form" onClick={toggleForm}>
           {isLogin
             ? "Don't have an account? Signup"

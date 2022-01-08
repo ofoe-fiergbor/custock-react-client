@@ -5,7 +5,7 @@ import { apiConstants } from "../../constants/ApiContansts";
 
 const Request = (() => {
   const { requestMethod } = apiConstants;
-  const baseURL = "http://localhost:8080/api/v1";
+  const baseURL = "https://custock.herokuapp.com/api/v1";
 
   const getHeaders = () => {
     const { authToken } = CustockRedux.getStore("auth");
